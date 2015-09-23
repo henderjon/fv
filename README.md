@@ -11,6 +11,7 @@ to display the current [Fighter Verse](http://fighterverses.com/).
 ### todo
 
   - change the "starting" date
+  - adds a "favorites" feature to save favorite verses
 
 ### requires
 
