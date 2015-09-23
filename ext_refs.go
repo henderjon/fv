@@ -1,5 +1,6 @@
 package main
 
+// the references, in order, of the extended set of Fighter Verses
 var Extended = []string{
 	"Philippians 1:1-2",
 	"Philippians 1:3-6",

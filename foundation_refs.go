@@ -1,5 +1,6 @@
 package main
 
+// the references, in order, of the foundation set of Fighter Verses
 var Foundation = []string{
 	"Genesis 1:1",
 	"Matthew 6:24",

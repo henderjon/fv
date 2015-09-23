@@ -1,5 +1,6 @@
 package main
 
+// the references, in order, of the legacy set of Fighter Verses
 var Legacy = []string{
 	"Deuteronomy 7:9",
 	"Deuteronomy 10:12-13",
