@@ -14,6 +14,7 @@ import (
 var (
 	ref  string
 	help bool
+	next, prev int
 )
 
 var api = "http://www.esvapi.org/v2/rest/passageQuery"
@@ -38,6 +39,8 @@ func main() {
 
 	flag.StringVar(&ref, "ref", "", "(optional) the reference to retrieve.")
 	flag.BoolVar(&help, "help", false, "(optional) trigger the help")
+	flag.IntVar(&next, "next", 0, "(optional) the verse for this week +x to view")
+	flag.IntVar(&prev, "prev", 0, "(optional) the verse for this week -x to view")
 	flag.Parse()
 
 	if help {
@@ -47,6 +50,8 @@ func main() {
 
 	if ref == "" {
 		week := diff()
+		week += next
+		week -= prev
 		ref = Base[week]
 	}
 
