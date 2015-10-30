@@ -15,33 +15,32 @@ var (
 	ref  string
 	help bool
 	next, prev int
-)
-
-var api = "http://www.esvapi.org/v2/rest/passageQuery"
-
-var opts = map[string]string{
-	"key":                        "IP",
-	"output-format":              "plain-text",
-	"include-short-copyright":    "0",
-	"include-copyright":          "0",
-	"include-audio-link":         "0",
-	"include-word-ids":           "0",
-	"include-verse-ids":          "0",
-	"include-headings":           "0",
-	"include-subheadings":        "0",
-	"include-footnote-links":     "0",
-	"include-footnotes":          "0",
-	"include-verse-numbers":      "1",
-	"include-passage-references": "1",
+	api = "http://www.esvapi.org/v2/rest/passageQuery"
+	opts = map[string]string{
+		"key":                        "IP",
+		"output-format":              "plain-text",
+		"include-short-copyright":    "0",
+		"include-copyright":          "0",
+		"include-audio-link":         "0",
+		"include-word-ids":           "0",
+		"include-verse-ids":          "0",
+		"include-headings":           "0",
+		"include-subheadings":        "0",
+		"include-footnote-links":     "0",
+		"include-footnotes":          "0",
+		"include-verse-numbers":      "1",
+		"include-passage-references": "1",
 }
 
-func main() {
-
+func init(){
 	flag.StringVar(&ref, "ref", "", "(optional) the reference to retrieve.")
 	flag.BoolVar(&help, "help", false, "(optional) trigger the help")
 	flag.IntVar(&next, "next", 0, "(optional) the verse for this week +x to view")
 	flag.IntVar(&prev, "prev", 0, "(optional) the verse for this week -x to view")
 	flag.Parse()
+}
+
+func main() {
 
 	if help {
 		flag.PrintDefaults()
